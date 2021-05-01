@@ -1,0 +1,11 @@
+.courses{
+    float: right;
+    color: black;
+    display: block;
+    text-align: center;
+    margin-right: -4px;
+}
+
+li{
+    border: black solid 3px;
+}

@@ -5,7 +5,7 @@ const myCalendarString = fs.readFileSync("D:\\arjay\\Documents\\Personal project
 
 const parsed = ical.parseString(myCalendarString);
 
-// Read Calendar Metadata
+// Read Calendar2 Metadata
 //console.log(parsed.calendarData);
 
 // Read Events

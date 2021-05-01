@@ -1,0 +1,14 @@
+.calendar{
+    align-content: center;
+    align-items: center;
+    top: 50%;
+    bottom: 50%;
+}
+
+.calendar-upload{
+    position: absolute;
+}
+.calendar-upload button:disabled{
+    cursor: not-allowed;
+    pointer-events: all !important;
+}

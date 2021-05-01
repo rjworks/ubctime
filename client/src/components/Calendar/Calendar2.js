@@ -3,9 +3,8 @@ import FullCalendar from '@fullcalendar/react'
 import {Component} from "react/cjs/react.production.min";
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'
-import { Popover, Button } from 'antd';
 
-export default class CourseSchedule extends Component {
+export default class Calendar2 extends Component {
     constructor() {
         super();
         this.state = {
@@ -30,28 +29,26 @@ export default class CourseSchedule extends Component {
                     slotMinTime={"08:00:00"}
                     slotMaxTime={"22:00:00"}
                     displayEventTime={false}
-                    // eventColor={'#DFF0D8'}
-                    // eventBorderColor={'#b0bfaa'}
-                    // eventTextColor={'#000000'}
-                    // allDaySlot={false}
-                    // firstDay={0}
-                    // dayHeaderFormat={{weekday: 'short'}}
-                    // weekends={true}
-                    // eventClick={(arg) => {
-                    //     alert(arg.event.title)
-                    // }}
-                    // eventMouseEnter={() => {
-                    //     console.log("enter")
-                    //     this.setState({isHovering: true});
-                    // }}
-                    // eventMouseLeave={() => {
-                    //     console.log("leave")
-                    //     this.setState({isHovering: false});
-                    // }}
-                    //events={this.state.events}
+                    eventColor={'#DFF0D8'}
+                    eventBorderColor={'#b0bfaa'}
+                    eventTextColor={'#000000'}
+                    allDaySlot={false}
+                    firstDay={0}
+                    dayHeaderFormat={{weekday: 'short'}}
+                    weekends={true}
+                    eventClick={(arg) => {
+                        alert(arg.event.title)
+                    }}
+                    eventMouseEnter={(arg) => {
+                        console.log(arg.event)
+                        this.setState({isHovering: true});
+                    }}
+                    eventMouseLeave={() => {
+                       // console.log("leave")
+                        this.setState({isHovering: false});
+                    }}
+                    events={this.state.events}
                 />
-                {/*{this.state.isHovering ? <p>Hi noob</p> : null}*/}
-               <p>Hi noob</p>
             </div>
         )
 
