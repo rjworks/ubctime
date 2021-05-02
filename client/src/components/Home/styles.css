@@ -7,7 +7,20 @@
     margin: 0;
 }
 
-.top-bar{
+.top-bar {
     position: relative;
     align-content: center;
+}
+
+.gutter {
+    background-color: #1E40AF;
+    height:100px;
+    display: flex;
+    flex-direction: row;
+    overflow: no-content;
+    float: right;
+}
+
+.gutter:hover {
+    cursor: col-resize;
 }

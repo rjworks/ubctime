@@ -17,6 +17,8 @@ function CourseTab(props) {
         }
     ]);
 
+    const [showCourseInfo, setShowCourseInfo] = useState(false);
+
     return (
         <div className={"courses"}>
             <div className="bg-white shadow-md p-4 flex rounded-md">
@@ -27,7 +29,10 @@ function CourseTab(props) {
                               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                      </svg>
                 </span>
-                <input className="w-full rounded p-2" type="text" placeholder="Try COSC 222"/>
+                <input
+                    className="w-full rounded p-1 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent"
+                    type="text"
+                    placeholder="Try COSC 222"/>
                 <button className="bg-blue-800 hover:bg-blue-700 rounded text-white p-2 pl-4 pr-4">
                     <p className="font-semibold text-md">Search</p>
                 </button>
@@ -46,7 +51,7 @@ function CourseTab(props) {
                             </p>
                         </div>
                         <div className="flex">
-                            <button className="focus:outline-none hover:text-blue-500">
+                            <button className="focus:outline-none hover:text-blue-500 transition duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
                                      viewBox="0 0 24 24"
                                      stroke="currentColor">
@@ -54,7 +59,7 @@ function CourseTab(props) {
                                           d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                             </button>
-                            <button className="focus:outline-none hover:text-blue-500">
+                            <button className="focus:outline-none hover:text-blue-500 transition duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
                                      viewBox="0 0 24 24"
                                      stroke="currentColor">

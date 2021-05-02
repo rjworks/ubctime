@@ -3,16 +3,17 @@ import React, {useState} from "react";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <nav className="bg-blue-800">
+        <nav className="bg-blue-800 py-2">
             <div className="max-w-8xl mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex space-x-4">
                         <div>
                             <a href="/"
-                               className="flex items-center py-5 px-9 text-gray-700 hover:text-gray-900">
+                               className="flex items-center py-2 px-9 text-gray-700 hover:text-gray-900">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="fill-current text-white w-20 mr-1"
+                                    className="fill-current py-1 px-1 rounded-md text-white w-20 border-2
+                                    border-t-white border-b-blue-800 border-l-white border-r-blue-800 hover:border-white transition duration-500"
                                     version="1"
                                     viewBox="0 0 235 87">
                                     <path
@@ -28,9 +29,18 @@ function Navbar() {
                                 {/*          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>*/}
                                 {/*</svg>*/}
                                 <span
-                                    className="font-bold text-xl px-3 py-0 border-2 border-white bg-blue-600 hover:bg-blue-500 text-white hover:text-white-100 rounded transition duration-300">
-                                    Time
+                                    className="font-bold text-xl px-3 py-0 border-2 border-l-blue-600 border-t-blue-600
+                                    border-white bg-blue-600 hover:bg-blue-500 text-white hover:border-white
+                                    rounded-md transition duration-500">
+                                    T I M E
                                 </span>
+                                {/*<div className="block font-bold text-xl px-3 text-white hover:text-gray-200 rounded-full transition duration-300">*/}
+                                {/*    <p className="text-3xl">UBC</p>*/}
+                                {/*    <p*/}
+                                {/*        className="ml-1">*/}
+                                {/*    Time*/}
+                                {/*</p>*/}
+                                {/*</div>*/}
                             </a>
                         </div>
                     </div>
