@@ -13,7 +13,7 @@ export default function WelcomePopup() {
                 setOpen(true)
                 showed = true;
             }
-        })
+        }, [])
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -89,6 +89,7 @@ export default function WelcomePopup() {
                                 <a
                                     className="inline-flex items-center justify-center w-10 h-10 mr-2 text-indigo-50 transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue-900"
                                     href="https://github.com/rjworks"
+                                    rel="noreferrer"
                                     target="_blank"
                                 >
                                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -98,6 +99,7 @@ export default function WelcomePopup() {
                                 <a
                                     className="text-decoration:none no-underline inline-flex items-center justify-center w-10 h-10 mr-2 text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue-900"
                                     href="https://instagram.com/r.jworks"
+                                    rel="noreferrer"
                                     target="_blank"
                                 >
                                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
