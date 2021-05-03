@@ -8,43 +8,42 @@ import Split from 'react-split'
 import './styles.css';
 import CourseTab from "../Courses/CourseTab";
 import Navbar from "./Navbar";
-import A from '../a'
-import B from '../b'
+import ReactScrollableList from "react-scrollable-list";
+import { FixedSizeList as List } from 'react-window';
 
 const Home = () => {
-
+    const courseList = ['COSC 111', 'COSC 121', 'COSC 222'];
+    const Row = ({ index, style }) => (
+        <div style={style}>{courseList[index]}</div>
+    );
     return (
         <div>
-            {/*<Split*/}
-            {/*    sizes={[75, 25]}*/}
-            {/*    minSize={100}*/}
-            {/*    expandToMin={false}*/}
-            {/*    gutterSize={10}*/}
-            {/*    gutterAlign="right"*/}
-            {/*    snapOffset={30}*/}
-            {/*    dragInterval={2}*/}
-            {/*    direction="horizontal"*/}
-            {/*    cursor="col-resize"*/}
+            {/*<List*/}
+            {/*    height={150}*/}
+            {/*    itemCount={courseList.length}*/}
+            {/*    itemSize={35}*/}
+            {/*    width={300}*/}
             {/*>*/}
-            {/*    <A />*/}
-            {/*    <B />*/}
-            {/*</Split>*/}
+            {/*    {Row}*/}
+            {/*</List>*/}
             <Navbar/>
             <WelcomePopup />
             <Split
-                sizes={[25,75]}
-                minSize={350, 350}
+                className="split"
+                sizes={[75,25]}
+                minSize={[350, 350]}
                 expandToMin={true}
                 gutterSize={5}
                 gutterAlign="center"
                 dragInterval={1}
                 direction="horizontal"
                 cursor="col-resize"
+                onDrag={() => {
+                    console.log("Dragging")}}
             >
-                <CourseTab />
                 <Calendar />
+                <CourseTab />
             </Split>
-            {/*<CalendarUpload/>*/}
         </div>
     );
 };

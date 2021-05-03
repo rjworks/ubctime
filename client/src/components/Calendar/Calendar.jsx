@@ -29,11 +29,12 @@ export const StyleWrapper = styled.div`
 let ran = false;
 function Calendar(props) {
 
+    const calendarRef = React.createRef();
     const checkEventColor = (day) => {
         const date = new Date(day);
         // console.log(`${date.getDay()} is ${date.getDay()%2}`)
-        console.log(`day: ${date.getDay()}`)
-        console.log(date.toString())
+      //  console.log(`day: ${date.getDay()}`)
+      //  console.log(date.toString())
         if(date.getDay() % 2 == 0){
             return '#3B82F6';
         }else{
@@ -96,6 +97,7 @@ function Calendar(props) {
                 <FullCalendar
                     height={'auto'}
                     plugins={[timeGridPlugin, interactionPlugin]}
+                    ref={calendarRef}
                     initialView={"timeGridWeek"}
                     headerToolbar={false}
                     eventDisplay={'block'}
@@ -104,12 +106,18 @@ function Calendar(props) {
                     slotMaxTime={"23:00:00"}
                     displayEventTime={false}
                     //#2563EB
+                    windowResizeDelay={1}
                     // eventColor={'#1E40AF'}
                     eventBorderColor={'#000000'}
                     allDaySlot={false}
                     firstDay={0}
                     dayHeaderFormat={{weekday: 'short'}}
                     weekends={true}
+                    windowResize={() => {
+                        console.log(calendarRef)
+                        let calendarApi = calendarRef.current.getApi()
+                        calendarApi.updateSize()
+                    }}
                     // eventClick={(arg) => {
                     //     alert(arg.event.title)
                     // }}
@@ -145,6 +153,7 @@ function Calendar(props) {
                 {/*<CalendarUpload/>*/}
         </div>
     );
+
 }
 
 export default Calendar;

@@ -1,0 +1,458 @@
+[
+  {
+    "subjectCode": "AGRO *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Agroecology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "ANTH",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ANTH",
+    "subjectTitle": "Anthropology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "APPP *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Applied Science Professional Platform",
+    "subjectFaculty": "Faculty of Applied Science"
+  },
+  {
+    "subjectCode": "APSC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=APSC",
+    "subjectTitle": "Applied Science",
+    "subjectFaculty": "Faculty of Applied Science"
+  },
+  {
+    "subjectCode": "ARCO *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Arts Co-Op",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "ARTH",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ARTH",
+    "subjectTitle": "Art History and Visual Culture",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "ASTR",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ASTR",
+    "subjectTitle": "Astronomy",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "BIOC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=BIOC",
+    "subjectTitle": "Biochemistry",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "BIOL",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=BIOL",
+    "subjectTitle": "Biology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "CCS",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CCS",
+    "subjectTitle": "Creative and Critical Studies",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "CHEM",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CHEM",
+    "subjectTitle": "Chemistry",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "CHIN",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CHIN",
+    "subjectTitle": "Chinese",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "COOP",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=COOP",
+    "subjectTitle": "Cooperative Education",
+    "subjectFaculty": "Faculty of Management"
+  },
+  {
+    "subjectCode": "CORH",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CORH",
+    "subjectTitle": "Communications and Rhetoric",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "COSC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=COSC",
+    "subjectTitle": "Computer Science",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "CRWR",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CRWR",
+    "subjectTitle": "Creative Writing",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "CULT",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CULT",
+    "subjectTitle": "Cultural Studies",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "CUST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=CUST",
+    "subjectTitle": "Curriculum Studies",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "DATA",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=DATA",
+    "subjectTitle": "Data Science",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "DIHU",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=DIHU",
+    "subjectTitle": "Digital Humanities",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "EADM",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EADM",
+    "subjectTitle": "Educational Administration",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "EAP",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EAP",
+    "subjectTitle": "English for Academic Purposes",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "ECED",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ECED",
+    "subjectTitle": "Early Childhood Education",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "ECON",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ECON",
+    "subjectTitle": "Economics",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "EDST *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Educational Studies",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "EDUC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EDUC",
+    "subjectTitle": "Education",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "EESC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EESC",
+    "subjectTitle": "Earth & Environmental Sciences",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "ENGL",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ENGL",
+    "subjectTitle": "English",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "ENGR",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ENGR",
+    "subjectTitle": "Engineering",
+    "subjectFaculty": "Faculty of Applied Science"
+  },
+  {
+    "subjectCode": "EPSE",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EPSE",
+    "subjectTitle": "Educational Psychology and Special Education",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "ETEC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=ETEC",
+    "subjectTitle": "Educational Technology",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "EXCH",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=EXCH",
+    "subjectTitle": "Exchange Programs",
+    "subjectFaculty": "Regi"
+  },
+  {
+    "subjectCode": "FDSY *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Food Systems",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "FILM",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=FILM",
+    "subjectTitle": "Film",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "FREN",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=FREN",
+    "subjectTitle": "French",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "GEOG",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=GEOG",
+    "subjectTitle": "Geography",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "GERM",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=GERM",
+    "subjectTitle": "German",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "GERO *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Gerontology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "GISC",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=GISC",
+    "subjectTitle": "Geospatial Information Science",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "GREK *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Greek",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "GWST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=GWST",
+    "subjectTitle": "Gender and Women's Studies",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "HEAL",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=HEAL",
+    "subjectTitle": "Health Studies",
+    "subjectFaculty": "Faculty of Health and Social Develop"
+  },
+  {
+    "subjectCode": "HEBR *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Hebrew",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "HINT",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=HINT",
+    "subjectTitle": "Health-Interprofessional",
+    "subjectFaculty": "Faculty of Health and Social Develop"
+  },
+  {
+    "subjectCode": "HIST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=HIST",
+    "subjectTitle": "History",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "HMKN",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=HMKN",
+    "subjectTitle": "Human Kinetics",
+    "subjectFaculty": "Faculty of Health and Social Develop"
+  },
+  {
+    "subjectCode": "IGS",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=IGS",
+    "subjectTitle": "Interdisciplinary Graduate Studies",
+    "subjectFaculty": "College of Graduate Studies"
+  },
+  {
+    "subjectCode": "INDG",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=INDG",
+    "subjectTitle": "Indigenous Studies",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "JPST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=JPST",
+    "subjectTitle": "Japanese Studies",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "KORN",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=KORN",
+    "subjectTitle": "Korean",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "LATN *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Latin",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "LLED",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=LLED",
+    "subjectTitle": "Language and Literacy Education",
+    "subjectFaculty": "Faculty of Education"
+  },
+  {
+    "subjectCode": "MANF",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=MANF",
+    "subjectTitle": "Manufacturing Engineering",
+    "subjectFaculty": "Faculty of Applied Science"
+  },
+  {
+    "subjectCode": "MATH",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=MATH",
+    "subjectTitle": "Mathematics",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "MDST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=MDST",
+    "subjectTitle": "Media Studies",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "MGCO",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=MGCO",
+    "subjectTitle": "Management Co-Op",
+    "subjectFaculty": "Faculty of Management"
+  },
+  {
+    "subjectCode": "MGMT",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=MGMT",
+    "subjectTitle": "Management",
+    "subjectFaculty": "Faculty of Management"
+  },
+  {
+    "subjectCode": "MUSC *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Music",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "NRSG",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=NRSG",
+    "subjectTitle": "Nursing",
+    "subjectFaculty": "Faculty of Health and Social Develop"
+  },
+  {
+    "subjectCode": "PHIL",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=PHIL",
+    "subjectTitle": "Philosophy",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "PHYS",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=PHYS",
+    "subjectTitle": "Physics",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "POLI",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=POLI",
+    "subjectTitle": "Political Science",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "PSYO",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=PSYO",
+    "subjectTitle": "Psychology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "SCCO *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Science Co-Op",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "SOCI",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=SOCI",
+    "subjectTitle": "Sociology",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "SOCW",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=SOCW",
+    "subjectTitle": "Social Work",
+    "subjectFaculty": "Faculty of Health and Social Develop"
+  },
+  {
+    "subjectCode": "SPAN",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=SPAN",
+    "subjectTitle": "Spanish",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "STAT",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=STAT",
+    "subjectTitle": "Statistics",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "SUST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=SUST",
+    "subjectTitle": "Sustainability",
+    "subjectFaculty": "Faculty of Arts and Sciences"
+  },
+  {
+    "subjectCode": "TEST",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=TEST",
+    "subjectTitle": "Test",
+    "subjectFaculty": "Regi"
+  },
+  {
+    "subjectCode": "THTR",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=THTR",
+    "subjectTitle": "Theatre",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "VANT *",
+    "subjectLink": "https://courses.students.ubc.caundefined",
+    "subjectTitle": "Vantage College",
+    "subjectFaculty": "Vantage College"
+  },
+  {
+    "subjectCode": "VGRS",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=VGRS",
+    "subjectTitle": "Visiting Graduate Students",
+    "subjectFaculty": "College of Graduate Studies"
+  },
+  {
+    "subjectCode": "VISA",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=VISA",
+    "subjectTitle": "Visual Arts",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  },
+  {
+    "subjectCode": "VURS",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=VURS",
+    "subjectTitle": "Visiting Undergraduate Research Students",
+    "subjectFaculty": "Faculty of Applied Science"
+  },
+  {
+    "subjectCode": "WRLD",
+    "subjectLink": "https://courses.students.ubc.ca/cs/courseschedule?pname=subjarea&tname=subj-department&dept=WRLD",
+    "subjectTitle": "World Literature",
+    "subjectFaculty": "Faculty of Creative and Critical Stds"
+  }
+]

@@ -1,0 +1,29 @@
+ GET http://localhost:3000/courses
+
+###
+
+GET http://localhost:3000/courses/608f56034fbc9241f004fc68
+
+###
+
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+  "course": "COSC 222",
+  "section": 101,
+  "professor": "Senapi",
+  "faculty": "Faculty of Anima LMAO",
+  "location": "Room 51",
+  "startDate": "May 2",
+  "endDate": "Not June 2"
+}
+
+###
+
+PATCH http://localhost:3000/courses/608f58f0e3be5b0b50497eee
+Content-Type: application/json
+
+{
+  "professor": "NOOB"
+}
