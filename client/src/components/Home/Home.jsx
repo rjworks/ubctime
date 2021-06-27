@@ -5,15 +5,14 @@ import WelcomePopup from "./WelcomePopup";
 import Split from 'react-split';
 import './styles.css';
 import CourseTab from "../Courses/CourseTab";
-import axios from "axios";
 import Navbarr from "./Navbarr";
 import Calendar from "../Calendar/Calendar";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
     const [courses, setCourses] = useState(null);
-
     useEffect(() => {
+        console.log(loading)
         const getcourses = async() => {
             setLoading(false);
             setCourses([

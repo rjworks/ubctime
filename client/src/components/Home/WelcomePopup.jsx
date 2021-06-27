@@ -13,7 +13,7 @@ export default function WelcomePopup() {
         if(!show) {
             handleShow();
         }
-    }, [])
+    }, [show])
 
     return (
         <MyModal

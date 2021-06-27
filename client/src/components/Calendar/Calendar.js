@@ -19,7 +19,7 @@ const events = [
         end: new Date(2021, 6 - 1, 27, 19, 0, 0),
     }];
 
-let showedCourseInfo = false;
+// let showedCourseInfo = false;
 let courseInfo = null;
 
 const Calendar = () => {

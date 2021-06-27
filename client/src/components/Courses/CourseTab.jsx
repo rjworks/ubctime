@@ -3,12 +3,12 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import 'material-icons/iconfont/material-icons.css';
 import './styles.css';
 
-const groups = [];
+// const groups = [];
 
 function CourseTab(props) {
     const courses = props.courses;
     const [filteredData, setFilteredData] = useState([]);
-    const [searchValue, setSearchValue] = useState("");
+    // const [searchValue, setSearchValue] = useState("");
     const inputFocusRef = useRef(null);
     const options = [];
     const dataNoDuplicates = new Set();
