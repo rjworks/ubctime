@@ -64,7 +64,6 @@ module.exports = {
             const utilities = Object.assign({}, ...colorMap);
 
             addUtilities(utilities, variants('borderColor'));
-            require('tailwind-scrollbar');
         },
   ],
 }
