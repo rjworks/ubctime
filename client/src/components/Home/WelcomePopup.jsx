@@ -10,10 +10,8 @@ export default function WelcomePopup() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     useEffect(() => {
-        if(!show) {
-            handleShow();
-        }
-    }, [show])
+        handleShow();
+    }, [])
 
     return (
         <MyModal
