@@ -1,14 +1,12 @@
 .calendar{
-    align-content: center;
-    align-items: center;
-    top: 50%;
-    bottom: 50%;
+    font-family: 'Open Sans', sans-serif;
 }
-
-.calendar-upload{
-    position: absolute;
+.calendar a{
+    pointer-events: none;
 }
-.calendar-upload button:disabled{
-    cursor: not-allowed;
-    pointer-events: all !important;
+.rbc-event-content{
+    font-size: 1rem;
+}
+.rbc-events-container{
+    width: 100%;
 }

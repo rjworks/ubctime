@@ -1,0 +1,117 @@
+.ubc-time-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw; /* Occupy the 90% of the screen width */
+    height: 100vh;
+    display: flex;
+}
+
+.modal-body, .modal-footer {
+    padding: 0;
+    margin: 0;
+}
+
+.modal-content {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0;
+    border-radius: 22px;
+}
+
+.modal-content li {
+    padding: 1rem;
+}
+
+.modal-content button {
+    margin: 1rem;
+}
+.ubc-time-modal-title {
+    border-radius: 19px 19px 0 0;
+    width: 100%;
+    color: #fff;
+    opacity: 1;
+    background: #3B82F6;
+    box-shadow: 200px 0 100px -100px #1D4ED8 inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+}
+
+.ubc-time-modal-title:hover {
+    box-shadow: 200px 0 100px -100px #3B82F6 inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+}
+
+.grade-distribution-container {
+    width: 100%;
+    background-color: #14213d;
+    border-radius: 0 0 19px 19px;
+}
+
+.grade-distribution {
+    display: flex;
+    align-items: center;
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*margin: auto;*/
+    /*width: 100%;*/
+}
+
+.grade-distribution .year-dropdown {
+    /*float: right;*/
+    margin-left: auto;
+    /*position: absolute;*/
+    /*padding: 0;*/
+    /*background-color: red;*/
+}
+
+.grade-distribution h1 {
+    /*background-color: red;*/
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #EEEEEE;
+    animation: 2s slide-left 0.1s forwards;
+    transform:translateX(30%);
+}
+
+.grade-distribution .dropdown-toggle{
+    box-shadow: 200px 0 100px -100px rgb(29, 78, 216) inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+    outline: none;
+}
+
+.grade-distribution .dropdown-toggle:hover{
+    box-shadow: 200px 0 100px -100px rgb(88, 147, 245) inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+}
+
+.grade-distribution .dropdown-toggle{
+    animation: 2s slide-left 0.1s forwards;
+    transform:translateX(-50%);
+}
+
+.course-info{
+    margin: 0.4rem 0 0.4rem 0.9rem;
+}
+.course-info-badge{
+    margin-left: 0.5rem;
+}
+.course-info-odd{
+    background-color: #EEEEEE;
+    animation: 2s slide-right 0.1s forwards;
+    transform:translateX(10%);
+}
+.course-info-even{
+    background-color: #ffffff;
+    animation: 2s slide-left 0.1s forwards;
+    transform:translateX(-10%);
+}
+
+@keyframes slide-right {
+    to {
+        transform:translateX(0);
+    }
+}
+
+@keyframes slide-left {
+    to {
+        transform:translateX(0);
+    }
+}

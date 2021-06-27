@@ -1,50 +1,67 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../Calendar/CalendarUpload'
 import '../../styles.css'
 import WelcomePopup from "./WelcomePopup";
-import CalendarUpload from "../Calendar/CalendarUpload";
-import Calendar from "../Calendar/Calendar";
-import Split from 'react-split'
+import Split from 'react-split';
 import './styles.css';
 import CourseTab from "../Courses/CourseTab";
-import Navbar from "./Navbar";
-import ReactScrollableList from "react-scrollable-list";
-import { FixedSizeList as List } from 'react-window';
+import axios from "axios";
+import Navbarr from "./Navbarr";
+import Calendar from "../Calendar/Calendar";
 
 const Home = () => {
-    const courseList = ['COSC 111', 'COSC 121', 'COSC 222'];
-    const Row = ({ index, style }) => (
-        <div style={style}>{courseList[index]}</div>
-    );
+    const [loading, setLoading] = useState(true);
+    const [courses, setCourses] = useState(null);
+
+    useEffect(() => {
+        const getcourses = async() => {
+            setLoading(false);
+            setCourses([
+                {
+                    "_id": "60d4d7449c8a4819142e491d",
+                    "subject": "COSC",
+                    "course": "COSC",
+                    "title": "Anthropology",
+                    "faculty": "Faculty of Arts and Sciences",
+                    "session": "2021W",
+                    "campus": "UBCO",
+                    "__v": 0
+                }])
+        }
+        if(courses === null)
+            getcourses().catch((e) => {
+                console.log(e.message)
+            });
+    })
+
     return (
-        <div>
-            {/*<List*/}
-            {/*    height={150}*/}
-            {/*    itemCount={courseList.length}*/}
-            {/*    itemSize={35}*/}
-            {/*    width={300}*/}
-            {/*>*/}
-            {/*    {Row}*/}
-            {/*</List>*/}
-            <Navbar/>
-            <WelcomePopup />
-            <Split
-                className="split"
-                sizes={[75,25]}
-                minSize={[350, 350]}
-                expandToMin={true}
-                gutterSize={5}
-                gutterAlign="center"
-                dragInterval={1}
-                direction="horizontal"
-                cursor="col-resize"
-                onDrag={() => {
-                    console.log("Dragging")}}
-            >
-                <Calendar />
-                <CourseTab />
-            </Split>
-        </div>
+        courses === null ?
+            <div className="triple-spinner"/>
+            :
+            <div className="home">
+                {/*<Navbar/>*/}
+                <WelcomePopup/>
+                <Navbarr/>
+                <div className="nice-border">
+                    <Split
+                        className="split"
+                        sizes={[75, 25]}
+                        minSize={[350, 350]}
+                        expandToMin={true}
+                        gutterSize={5}
+                        gutterAlign="center"
+                        dragInterval={1}
+                        direction="horizontal"
+                        cursor="col-resize"
+                        onDrag={() => {
+                            console.log("Dragging")
+                        }}
+                    >
+                        <Calendar/>
+                        <CourseTab courses={courses}/>
+                    </Split>
+                </div>
+            </div>
     );
 };
 
