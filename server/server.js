@@ -37,7 +37,7 @@ const http = rateLimit(axios.create(), {maxRequests: 1, perMilliseconds: 10000, 
 let requestsMadeUBC = 0;
 let requestsMadeMongoAtlas = 0;
 let totalRequestsLoop = 0;
-const maxRequests = 10;
+const maxRequests = 6;
 let scrapingErrors = [];
 const scrapeSubjects = (sessionYear, sessionTerm, campus) => {
     campus = campus === "UBCV" ? "UBC" : "UBCO";
