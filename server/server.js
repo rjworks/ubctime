@@ -114,18 +114,18 @@ const getSections = async(link) => {
 
 const getCoursesWithSections = async(courses) => {
     for(const c of courses) {
-        if(requestsMadeUBC >= maxRequests) {
-            console.log("PAUSE GETTING SECTIONS")
-            await wait(1200 * 1000);
-            requestsMadeUBC = 0;
-            console.log("CONTINUE GETTING SECTIONS")
-        }
+        // if(requestsMadeUBC >= maxRequests) {
+        //     console.log("PAUSE GETTING SECTIONS")
+        //     await wait(60 * 1000);
+        //     requestsMadeUBC = 0;
+        //     console.log("CONTINUE GETTING SECTIONS")
+        // }
         requestsMadeUBC++;
         console.log("requestsMadeUBC: " + requestsMadeUBC)
         console.log("errors: " + scrapingErrors)
-        console.log("WAIT 300 SECONDS BEFORE CALLING GETSECTIONS")
-        await wait(300 * 1000);
-        console.log("CONTINUE")
+        // console.log("WAIT 300 SECONDS BEFORE CALLING GETSECTIONS")
+        // await wait(300 * 1000);
+        // console.log("CONTINUE")
         // console.log(el.link)
         c.sections = await getSections(c.link);
         // console.log("with sections above")
@@ -175,21 +175,21 @@ const scrapeCourses = async(subjects) => {
         while(!ok) {
             try {
                 //2020W
-                console.log("WAITING 300 SECONDS BEFORE ANOTHER REQUEST FOR SCRAPING COURSES")
-                await wait(300 * 1000)
+                // console.log("WAITING 300 SECONDS BEFORE ANOTHER REQUEST FOR SCRAPING COURSES")
+                // await wait(300 * 1000)
                 const sessionYear = subject.session.substring(0, 4);
                 const sessionTerm = subject.session.substring(4, 5);
                 const url = `https://courses.students.ubc.ca/cs/courseschedule?tname=subj-department&sessyr=${sessionYear}&sesscd=${sessionTerm}&campuscd=${subject.campus === "UBCV" ? "UBC" : "UBCO"}&dept=${subject.subject}&pname=subjarea`;
-                if(requestsMadeUBC >= maxRequests) {
-                    console.log("PAUSE SCRAPING COURSES")
-                    await wait(1200 * 1000);
-                    requestsMadeUBC = 0;
-                    totalRequestsLoop++;
-                    console.log("CONTINUE SCRAPING COURSES")
-                }
+                // if(requestsMadeUBC >= 10) {
+                //     console.log("PAUSE SCRAPING COURSES")
+                //     await wait(60 * 1000);
+                //     requestsMadeUBC = 0;
+                //     totalRequestsLoop++;
+                //     console.log("CONTINUE SCRAPING COURSES")
+                // }
                 if(totalRequestsLoop !== 0 && totalRequestsLoop % 10 === 0) {
                     console.log("WAIT FOR TOTAL REQUESTS LOOP EVERY 10 LOOPS")
-                    await wait(1800 * 1000)
+                    await wait(300 * 1000)
                 }
                 const res = await http.get(url);
                 requestsMadeUBC++;
@@ -233,16 +233,6 @@ const grabCourses = async(campus) => {
     let ok = false;
     while(!ok){
         try {
-            const d = [
-                {
-                    "_id": "60d4d7449c8a4819142e491d",
-                    "subject": "COSC",
-                    "title": "Anthropology",
-                    "faculty": "Faculty of Arts and Sciences",
-                    "session": "2021W",
-                    "campus": "UBCO",
-                    "__v": 0
-                }]
             const res = await http.get(`http://localhost:8000/api/${campus}/subjects`);
             console.log("got res")
             const coursesNoSections = await scrapeCourses(res.data);
@@ -252,7 +242,7 @@ const grabCourses = async(campus) => {
             for(const course of coursesWithSections) {
                 if(requestsMadeMongoAtlas >= 50) {
                     console.log("PAUSE POSTING COURSE")
-                    await wait(300 * 1000);
+                    await wait(60 * 1000);
                     requestsMadeMongoAtlas = 0;
                     console.log("CONTINUE POSTING COURSE")
                 }
@@ -321,7 +311,7 @@ const grabCourses = async(campus) => {
 // })
 
 
-grabCourses("UBCO");
+grabCourses("UBCV");
 // actually get information from the course given the course number, code, session, and campus
 const scrapeCourseSections = async(courses) => {
     let idx = 0;
