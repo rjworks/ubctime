@@ -311,7 +311,7 @@ const grabCourses = async(campus) => {
 // })
 
 
-grabCourses("UBCV");
+// grabCourses("UBCV");
 // actually get information from the course given the course number, code, session, and campus
 const scrapeCourseSections = async(courses) => {
     let idx = 0;
