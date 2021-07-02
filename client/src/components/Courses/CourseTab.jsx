@@ -283,7 +283,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                                         </div>
                                     </div>
                                 }
-                                return <div>UHmmm...</div>
+                                // return <div>UHmmm...</div>
                             }) :
                             // console.log(groups[currentCourse[0]].courses)
                             viewingSectionInfo === null ?
@@ -326,7 +326,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                                             </div>
                                         </div>
                                     }
-                                    return <div>UHmmm...</div>
+                                    // return <div>UHmmm...</div>
                                 })
                             :
                             filteredData !== null && filteredData['MATH'] !== undefined ? Object.keys(filteredData).map((el, i) => {

@@ -14,7 +14,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setPermEvents} from "../../actions/permEvents";
 import {setCampus} from "../../actions/campus";
 import {setSession} from "../../actions/session";
-
+import axiosInstance from "../../client";
 const Home = () => {
     const [UBCOCourses, setUBCOCourses] = useState(null);
     const [UBCOSectionsInfo, setUBCOSectionsInfo] = useState(null);
@@ -28,7 +28,7 @@ const Home = () => {
     useEffect(() => {
         const checkNewData = async() => {
             try {
-                const res = await axios.get('http://localhost:8000/api/newData');
+                const res = await axiosInstance.get('/newData');
                 if(res.data.newData === true) {
                     localStorage.clear();
                     setHasData(false);
@@ -46,19 +46,19 @@ const Home = () => {
                     && localStorage.getItem("UBCVSectionsInfo") === null
                     && localStorage.getItem("events") === null && localStorage.getItem("campus") === null) {
 
-                    let res = await axios.get(`http://localhost:8000/api/ubco/courses`)
+                    let res = await axiosInstance.get(`/ubco/courses`)
                     setUBCOCourses(res.data);
                     localStorage.setItem("UBCOCourses", LZString.compress(JSON.stringify(res.data)));
 
-                    res = await axios.get(`http://localhost:8000/api/ubco/sections-info`)
+                    res = await axiosInstance.get(`/ubco/sections-info`)
                     setUBCOSectionsInfo(res.data);
                     localStorage.setItem("UBCOSectionsInfo", LZString.compress(JSON.stringify(res.data)));
 
-                    res = await axios.get(`http://localhost:8000/api/ubcv/courses`)
+                    res = await axiosInstance.get(`/ubcv/courses`)
                     setUBCVCourses(res.data);
                     localStorage.setItem("UBCVCourses", LZString.compress(JSON.stringify(res.data)));
 
-                    res = await axios.get(`http://localhost:8000/api/ubcv/sections-info`)
+                    res = await axiosInstance.get(`/ubcv/sections-info`)
                     setUBCVSectionsInfo(res.data);
                     localStorage.setItem("UBCVSectionsInfo", LZString.compress(JSON.stringify(res.data)));
 

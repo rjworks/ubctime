@@ -4,6 +4,7 @@ import {Alert, Button, DropdownButton, NavDropdown} from "react-bootstrap";
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import {removePermEvent} from "../../actions/permEvents";
+import axiosInstance from "../../client";
 
 const renderActiveShape = (props) => {
 
@@ -77,7 +78,7 @@ const GradeDistribution = (props) => {
     );
 
     const grabGrades = async() => {
-        const res = await axios.get(`http://localhost:8000/api/${campus}/grades/${currentYear}/${subject}/${courseNumber}/overall`);
+        const res = await axiosInstance.get(`/${campus}/grades/${currentYear}/${subject}/${courseNumber}/overall`);
         const d = res.data[0];
         setGradesData([
             {name: '<50%', value: parseInt(d.grades["<50"])},
@@ -100,7 +101,7 @@ const GradeDistribution = (props) => {
             .catch(e => {
                 setGradesData(null);
             })
-    })
+    }, [])
 
     useEffect(() => {
         grabGrades().then(r => {
