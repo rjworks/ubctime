@@ -3,14 +3,15 @@ import {Badge, Button, Modal} from "react-bootstrap";
 import './styles.css';
 
 const MyModal = ({show, body, button, handleClose, hasFooter, type, courseInfo}) => {
+
     return (
         <Modal className="ubc-time-modal"
-               onExit     = { function(){ console.log( "onExit    " ) }}
-               onExiting  = { function(){ console.log( "onExiting " ) }}
-               onExited   = { function(){ console.log( "onExited  " ) }}
-               onEnter    = { function(){ console.log( "onEnter   " ) }}
-               onEntering = { function(){ console.log( "onEntering" ) }}
-               onEntered  = { function(){ console.log( "onEntered " ) }}
+            // onExit     = { function(){ console.log( "onExit    " ) }}
+            // onExiting  = { function(){ console.log( "onExiting " ) }}
+            // onExited   = { function(){ console.log( "onExited  " ) }}
+            // onEnter    = { function(){ console.log( "onEnter   " ) }}
+            // onEntering = { function(){ console.log( "onEntering" ) }}
+            // onEntered  = { function(){ console.log( "onEntered " ) }}
                centered
                animation={true}
                show={show}
@@ -76,23 +77,94 @@ const MyModal = ({show, body, button, handleClose, hasFooter, type, courseInfo})
                     } else {
                         return (
                             <div key={i}>
-                                {Object.keys(courseInfo).map((key, i) => {
-                                    return (
-                                        <div key={i} className={"course-info-container " + (i % 2 === 0 ? "course-info-even" : "course-info-odd")}>
-                                            <div key={i}>
-                                                <Badge
-                                                    className="course-info-badge"
-                                                    variant="secondary">
-                                                    {key !== "id" && key.charAt(0).toUpperCase() + key.slice(1)+": "}
-                                                </Badge>
-                                                <div key={i} className="course-info">
-                                                    {key!=="id" && courseInfo[key].toString()}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                                <table>
+                                    <tbody>
+                                    <tr className={"course-info-container " + (i % 2 === 0 ? "course-info-even" : "course-info-odd")}>
+                                        <th><Badge variant="secondary">Course</Badge></th>
+                                        <th><Badge variant="secondary">Instructor</Badge></th>
+                                        <th><Badge variant="secondary">Mode of Delivery</Badge></th>
+                                    </tr>
+                                    <tr className={"course-info-container " + (i % 2 === 0 ? "course-info-odd" : "course-info-even")}>
+                                        {Object.keys(courseInfo).filter(v =>
+                                            v !== "status" && v !== "endTime" && v !== "courseNumber" && v !== "subject" && v !== "room" && v !== "link" && v !== "building" && v !== "day" && v !== "start" && v !== "end" && v !== "startTime" && v !== "id" && v !== "section" && v !== "campus" && v !== "session")
+                                            .map((key, i) => {
+                                                return <td
+                                                    key={i}>
+                                                    {key !== "id" && courseInfo[key].toString()}
+                                                </td>
+                                            })}
+                                    </tr>
+                                    <tr className={"course-info-container " + (i % 2 === 0 ? "course-info-even" : "course-info-odd")}>
+                                        <th><Badge variant="secondary">Building</Badge></th>
+                                        <th><Badge variant="secondary">Room</Badge></th>
+                                        <th><Badge variant="secondary">SSC Link</Badge></th>
+                                    </tr>
+                                    <tr className={"course-info-container " + (i % 2 === 0 ? "course-info-odd" : "course-info-even")}>
+                                        {Object.keys(courseInfo).filter(v =>
+                                            v !== "status" && v !== "endTime" && v !== "courseNumber" && v !== "subject" && v !== "title" && v !== "instructor" && v !== "modeOfDelivery" && v !== "day" && v !== "start" && v !== "end" && v !== "startTime" && v !== "id" && v !== "section" && v !== "campus" && v !== "session")
+                                            .map((key, i) => {
+                                                return <td
+                                                    key={i}>
+                                                    {
+                                                        key !== "id"
+                                                        && key !== "link"
+                                                        && courseInfo[key].toString()}
+                                                    {key === "link" ?
+                                                        <a href={courseInfo[key].toString()} rel="noreferrer" target="_blank">Click me
+                                                            :D</a> : null}
+                                                </td>
+                                            })}
+                                    </tr>
+                                    </tbody>
+                                </table>
                                 {el}
+                                {/*{Object.keys(courseInfo).filter(v =>*/}
+                                {/*    v !== "status" && v !== "section" && v !== "campus" && v !== "session")*/}
+                                {/*    .map((key, i) => {*/}
+                                {/*        return (*/}
+                                {/*            <table>*/}
+                                {/*                <tr key={i}*/}
+                                {/*                    className={"course-info-container " + (i % 2 === 0 ? "course-info-even" : "course-info-odd")}>*/}
+                                {/*                    <th key={i}>*/}
+                                {/*                        <Badge*/}
+                                {/*                            className="course-info-badge"*/}
+                                {/*                            variant="secondary">*/}
+                                {/*                            {key !== "id"*/}
+                                {/*                            && key !== "status"*/}
+                                {/*                            && key !== "start"*/}
+                                {/*                            && key !== "end"*/}
+                                {/*                            && key !== "title"*/}
+                                {/*                            && key !== "section"*/}
+                                {/*                            && key !== "link"*/}
+                                {/*                            && key.charAt(0).toUpperCase() + key.slice(1) + ": "}*/}
+                                {/*                            {key === "title" ? "Course:" : null}*/}
+                                {/*                            {key === "link" ? "SSC Link:" : null}*/}
+                                {/*                        </Badge>*/}
+                                {/*                    </th>*/}
+                                {/*                </tr>*/}
+                                {/*                <tr key={i} className="course-info">*/}
+                                {/*                    <td>*/}
+                                {/*                        {key !== "id"*/}
+                                {/*                        && key !== "status"*/}
+                                {/*                        && key !== "start"*/}
+                                {/*                        && key !== "end"*/}
+                                {/*                        && key !== "link"*/}
+                                {/*                        && key !== "section"*/}
+                                {/*                        && key !== "startTime"*/}
+                                {/*                        && key !== "endTime"*/}
+                                {/*                        && key !== "day"*/}
+                                {/*                        && courseInfo[key].toString()}*/}
+                                {/*                        {key === "link" ? <a href={courseInfo[key]} target="_blank">Click*/}
+                                {/*                            here</a> : null}*/}
+                                {/*                        {key === "startTime" ? hourConvert(courseInfo[key].toString()) : null}*/}
+                                {/*                        {key === "endTime" ? hourConvert(courseInfo[key].toString()) : null}*/}
+                                {/*                        {key === "day" ? dayConverter(courseInfo[key].toString()) : null}*/}
+                                {/*                    </td>*/}
+                                {/*                </tr>*/}
+                                {/*            </table>*/}
+                                {/*        );*/}
+                                {/*    })}*/}
+                                {/*{el}*/}
                             </div>
                         );
                     }

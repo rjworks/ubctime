@@ -46,7 +46,10 @@
 
 .grade-distribution {
     display: flex;
-    align-items: center;
+    z-index: -1;
+    /*background-color: red;*/
+    /*padding-top: rem;*/
+    /*align-items: center;*/
     /*height: 100%;*/
     /*width: 100%;*/
     /*margin: auto;*/
@@ -61,14 +64,31 @@
     /*background-color: red;*/
 }
 
-.grade-distribution h1 {
+.grade-distribution-button-container{
+    margin-left: auto;
+    /*padding-top: 1rem;*/
+    text-align: left;
+}
+.delete-course-button{
+    padding: 0.4rem 1.26rem;
+    box-shadow: 200px 0 100px -100px rgb(127, 29, 29) inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+    outline: none;
+}
+.delete-course-button:hover{
+    box-shadow: 200px 0 100px -100px rgb(153, 27, 27) inset, 0 0 0 black;
+    transition: background 2s ease, box-shadow 1s ease;
+}
+.grade-distribution span {
     /*background-color: red;*/
     padding: 1rem;
+    /*height: 2rem;*/
     font-size: 1.3rem;
     font-weight: 500;
     color: #EEEEEE;
     animation: 2s slide-left 0.1s forwards;
     transform:translateX(30%);
+    /*background-color: red;*/
 }
 
 .grade-distribution .dropdown-toggle{
@@ -82,11 +102,26 @@
     transition: background 2s ease, box-shadow 1s ease;
 }
 
-.grade-distribution .dropdown-toggle{
+.grade-distribution .dropdown-toggle, .delete-course-button{
     animation: 2s slide-left 0.1s forwards;
     transform:translateX(-50%);
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 .course-info{
     margin: 0.4rem 0 0.4rem 0.9rem;
 }

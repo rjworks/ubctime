@@ -1,5 +1,6 @@
 import Home from "./components/Home/Home";
 import './styles.css';
+
 const App = () => (
     <Home/>
 );

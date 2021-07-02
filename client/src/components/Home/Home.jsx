@@ -5,42 +5,123 @@ import WelcomePopup from "./WelcomePopup";
 import Split from 'react-split';
 import './styles.css';
 import CourseTab from "../Courses/CourseTab";
-import Navbarr from "./Navbarr";
+import Navbar from "./Navbar";
 import Calendar from "../Calendar/Calendar";
+import axios from "axios";
+import LoadingScreen from "../Utils/LoadingScreen";
+import LZString from 'lz-string';
+import {useDispatch, useSelector} from "react-redux";
+import {setPermEvents} from "../../actions/permEvents";
+import {setCampus} from "../../actions/campus";
+import {setSession} from "../../actions/session";
 
 const Home = () => {
-    const [loading, setLoading] = useState(true);
-    const [courses, setCourses] = useState(null);
+    const [UBCOCourses, setUBCOCourses] = useState(null);
+    const [UBCOSectionsInfo, setUBCOSectionsInfo] = useState(null);
+    const [UBCVCourses, setUBCVCourses] = useState(null);
+    const [UBCVSectionsInfo, setUBCVSectionsInfo] = useState(null);
+    const [savedEvents, setSavedEvents] = useState(null);
+    const [hasData, setHasData] = useState(UBCOCourses !== null && UBCVCourses !== null && UBCOSectionsInfo !== null && UBCVSectionsInfo !== null);
+    const dispatch = useDispatch();
+    const permEvents = useSelector(state => state.permEvents);
+
     useEffect(() => {
-        console.log(loading)
-        const getcourses = async() => {
-            setLoading(false);
-            setCourses([
-                {
-                    "_id": "60d4d7449c8a4819142e491d",
-                    "subject": "COSC",
-                    "course": "COSC",
-                    "title": "Anthropology",
-                    "faculty": "Faculty of Arts and Sciences",
-                    "session": "2021W",
-                    "campus": "UBCO",
-                    "__v": 0
-                }])
+        const checkNewData = async() => {
+            try {
+                const res = await axios.get('http://localhost:8000/api/newData');
+                if(res.data.newData === true) {
+                    localStorage.clear();
+                    setHasData(false);
+                }
+            } catch(e) {
+                console.log(e.message);
+            }
         }
-        if(courses === null)
-            getcourses().catch((e) => {
+        const getCourses = async() => {
+            await checkNewData();
+            try {
+                if(localStorage.getItem("UBCOCourses") === null
+                    && localStorage.getItem("UBCOSectionsInfo") === null
+                    && localStorage.getItem("UBCVCourses") === null
+                    && localStorage.getItem("UBCVSectionsInfo") === null
+                    && localStorage.getItem("events") === null && localStorage.getItem("campus") === null) {
+
+                    let res = await axios.get(`http://localhost:8000/api/ubco/courses`)
+                    setUBCOCourses(res.data);
+                    localStorage.setItem("UBCOCourses", LZString.compress(JSON.stringify(res.data)));
+
+                    res = await axios.get(`http://localhost:8000/api/ubco/sections-info`)
+                    setUBCOSectionsInfo(res.data);
+                    localStorage.setItem("UBCOSectionsInfo", LZString.compress(JSON.stringify(res.data)));
+
+                    res = await axios.get(`http://localhost:8000/api/ubcv/courses`)
+                    setUBCVCourses(res.data);
+                    localStorage.setItem("UBCVCourses", LZString.compress(JSON.stringify(res.data)));
+
+                    res = await axios.get(`http://localhost:8000/api/ubcv/sections-info`)
+                    setUBCVSectionsInfo(res.data);
+                    localStorage.setItem("UBCVSectionsInfo", LZString.compress(JSON.stringify(res.data)));
+
+                    setSavedEvents([]);
+                    localStorage.setItem("events", LZString.compress(JSON.stringify([])));
+
+                    localStorage.setItem("campus", LZString.compress(JSON.stringify("UBC Okanagan")));
+                    localStorage.setItem("session", LZString.compress(JSON.stringify("2021 Winter")));
+                } else {
+                    setUBCOCourses(JSON.parse(LZString.decompress(localStorage.getItem("UBCOCourses"))));
+                    setUBCOSectionsInfo(JSON.parse(LZString.decompress(localStorage.getItem("UBCOSectionsInfo"))));
+                    setUBCVCourses(JSON.parse(LZString.decompress(localStorage.getItem("UBCVCourses"))));
+                    setUBCVSectionsInfo(JSON.parse(LZString.decompress(localStorage.getItem("UBCVSectionsInfo"))));
+                    setSavedEvents(JSON.parse(LZString.decompress(localStorage.getItem("events"))));
+                    dispatch(setSession((JSON.parse(LZString.decompress(localStorage.getItem("session"))))));
+                    dispatch(setCampus((JSON.parse(LZString.decompress(localStorage.getItem("campus"))))));
+                }
+            } catch(e) {
+                console.log(e.message);
+            }
+        }
+
+        if(!hasData)
+            getCourses().then(r => {
+                setHasData(true);
+            }).catch((e) => {
                 console.log(e.message)
             });
-    })
+    }, [])
+
+    // will be called when we got the courses and sections info
+    // stored in the state
+    useEffect(() => {
+        if(UBCOCourses !== null && UBCOSectionsInfo !== null && UBCVCourses !== null && UBCVSectionsInfo !== null && savedEvents !== null){
+            const temp = Object.assign([], savedEvents);
+            temp.forEach(el => {
+                el.start = new Date(el.start);
+                el.end = new Date(el.end);
+            })
+            dispatch(setPermEvents(temp));
+            setHasData(true);
+        }
+    }, [UBCOCourses, UBCOSectionsInfo, UBCVCourses, UBCVSectionsInfo, savedEvents])
+
+    // update events in local storage
+    useEffect(() => {
+        if(hasData){
+            if(permEvents.length !== 0){
+                localStorage.setItem("events", LZString.compress(JSON.stringify(permEvents)));
+            }else if(permEvents.length === 0){
+                localStorage.setItem("events", LZString.compress(JSON.stringify([])));
+            }
+        }
+    }, [permEvents])
 
     return (
-        courses === null ?
-            <div className="triple-spinner"/>
+        !hasData
+            ?
+            <LoadingScreen/>
             :
             <div className="home">
-                {/*<Navbar/>*/}
                 <WelcomePopup/>
-                <Navbarr/>
+                <Navbar/>
                 <div className="nice-border">
                     <Split
                         className="split"
@@ -56,8 +137,13 @@ const Home = () => {
                             console.log("Dragging")
                         }}
                     >
-                        <Calendar/>
-                        <CourseTab courses={courses}/>
+                        <Calendar savedEvents={savedEvents}/>
+                        <CourseTab
+                            UBCOCourses={UBCOCourses}
+                            UBCOSectionsInfo={UBCOSectionsInfo}
+                            UBCVCourses={UBCVCourses}
+                            UBCVSectionsInfo={UBCVSectionsInfo}
+                        />
                     </Split>
                 </div>
             </div>

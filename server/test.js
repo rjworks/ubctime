@@ -28,31 +28,38 @@
 // }
 //
 // d();
-const d = () => {
-    const banned = [3];
-    const h = [1, 2, 3, 4, 5];
-    let processed = [];
-    for(const i of h) {
-        let succ = false;
-        while(!succ) {
-            console.log("back here")
-            try {
-                if(i === 3){
-                    throw new Error("err");
-                }
-                console.log("success")
-                console.log(i)
-                processed.push(i);
-                succ = true;
-            } catch(e) {
-                succ = false;
-                setTimeout(() => {
-                    console.log("Stop here")
-                }, 3000)
-                // console.log(e.message)
-            }
-        }
-    }
-}
+// const d = () => {
+//     const banned = [3];
+//     const h = [1, 2, 3, 4, 5];
+//     let processed = [];
+//     for(const i of h) {
+//         let succ = false;
+//         while(!succ) {
+//             console.log("back here")
+//             try {
+//                 if(i === 3){
+//                     throw new Error("err");
+//                 }
+//                 console.log("success")
+//                 console.log(i)
+//                 processed.push(i);
+//                 succ = true;
+//             } catch(e) {
+//                 succ = false;
+//                 setTimeout(() => {
+//                     console.log("Stop here")
+//                 }, 3000)
+//                 // console.log(e.message)
+//             }
+//         }
+//     }
+// }
+//
+// d();
+const a = [];
+const hi = [1,2,3,4,5];
+hi.map((el, i)=>{
+    a.push("idiot")
+})
 
-d();
+console.log(a)

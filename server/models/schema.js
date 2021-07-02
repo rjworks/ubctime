@@ -20,6 +20,7 @@ const course = new mongoose.Schema({
     subject: reqString,
     courseNumber: reqString,
     title: reqString,
+    prerequisites: reqString,
     faculty: reqString,
     sections: reqArr,
     link: reqString,
@@ -35,16 +36,22 @@ const section = new mongoose.Schema({
 })
 
 const sectionInfo = new mongoose.Schema({
+    activity: reqString,
+    course: reqString,
+    subject: reqString,
+    courseNumber: reqString,
     section: reqString,
     title: reqString,
     description: reqString,
     instructor: reqString,
-    activity: reqString,
-    credits: reqString,
+    requiresInPersonAttendance: reqString,
+    modeOfDelivery: reqString,
     term: reqString,
-    building: reqString,
-    room: reqString,
-    classTimes: reqObj,
+    credits: reqString,
+    prerequisites: reqString,
+    classTimes: reqArr,
+    faculty: reqString,
+    link: reqString,
     session: reqString,
     campus: reqString
 })
@@ -52,4 +59,4 @@ const sectionInfo = new mongoose.Schema({
 exports.Subject = mongoose.model("Subject", subject, "subjects2021W");
 exports.Course = mongoose.model('Course', course, "courses2021W")
 exports.Section = mongoose.model('Section', section, "sections2021W")
-// exports.SectionInfo = mongoose.model('SectionInfo', sectionInfo, "Subjects2021W")
+exports.SectionInfo = mongoose.model('SectionInfo', sectionInfo, "sectionInfo2021W")
