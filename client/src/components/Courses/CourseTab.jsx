@@ -28,7 +28,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
     useEffect(() => {
         setCourses(campus === "UBC Okanagan" ? UBCOCourses : UBCVCourses);
         setAllSectionInfo(campus === "UBC Okanagan" ? UBCOSectionsInfo : UBCVSectionsInfo);
-    }, [campus])
+    }, [campus, UBCOCourses, UBCVCourses, UBCVSectionsInfo, UBCOSectionsInfo])
 
     useEffect(() => {
         if(courses !== null && allSectionInfo !== null) {
@@ -283,7 +283,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                                         </div>
                                     </div>
                                 }
-                                // return <div>UHmmm...</div>
+                                return null;
                             }) :
                             // console.log(groups[currentCourse[0]].courses)
                             viewingSectionInfo === null ?
@@ -326,7 +326,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                                             </div>
                                         </div>
                                     }
-                                    // return <div>UHmmm...</div>
+                                    return null;
                                 })
                             :
                             filteredData !== null && filteredData['MATH'] !== undefined ? Object.keys(filteredData).map((el, i) => {

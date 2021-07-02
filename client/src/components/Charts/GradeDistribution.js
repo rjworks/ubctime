@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Pie, PieChart, Sector} from 'recharts';
 import {Alert, Button, DropdownButton, NavDropdown} from "react-bootstrap";
-import axios from "axios";
 import {useDispatch} from "react-redux";
 import {removePermEvent} from "../../actions/permEvents";
 import axiosInstance from "../../client";
@@ -77,39 +76,38 @@ const GradeDistribution = (props) => {
         [setActiveIndex]
     );
 
-    const grabGrades = async() => {
-        const res = await axiosInstance.get(`/${campus}/grades/${currentYear}/${subject}/${courseNumber}/overall`);
-        const d = res.data[0];
-        setGradesData([
-            {name: '<50%', value: parseInt(d.grades["<50"])},
-            {name: '50-54%', value: parseInt(d.grades["50-54"])},
-            {name: '55-59%', value: parseInt(d.grades["55-59"])},
-            {name: '60-63%', value: parseInt(d.grades["60-63"])},
-            {name: '64-67%', value: parseInt(d.grades["64-67"])},
-            {name: '68-71%', value: parseInt(d.grades["68-71"])},
-            {name: '72-75%', value: parseInt(d.grades["72-75"])},
-            {name: '76-79%', value: parseInt(d.grades["76-79"])},
-            {name: '80-84%', value: parseInt(d.grades["80-84"])},
-            {name: '85-89%', value: parseInt(d.grades["85-89"])},
-            {name: '90-100%', value: parseInt(d.grades["90-100"])}
-        ]);
-    }
-
     useEffect(() => {
+        const grabGrades = async() => {
+            const res = await axiosInstance.get(`/${campus}/grades/${currentYear}/${subject}/${courseNumber}/overall`);
+            const d = res.data[0];
+            setGradesData([
+                {name: '<50%', value: parseInt(d.grades["<50"])},
+                {name: '50-54%', value: parseInt(d.grades["50-54"])},
+                {name: '55-59%', value: parseInt(d.grades["55-59"])},
+                {name: '60-63%', value: parseInt(d.grades["60-63"])},
+                {name: '64-67%', value: parseInt(d.grades["64-67"])},
+                {name: '68-71%', value: parseInt(d.grades["68-71"])},
+                {name: '72-75%', value: parseInt(d.grades["72-75"])},
+                {name: '76-79%', value: parseInt(d.grades["76-79"])},
+                {name: '80-84%', value: parseInt(d.grades["80-84"])},
+                {name: '85-89%', value: parseInt(d.grades["85-89"])},
+                {name: '90-100%', value: parseInt(d.grades["90-100"])}
+            ]);
+        }
         grabGrades().then(r => {
         })
             .catch(e => {
                 setGradesData(null);
             })
-    }, [])
+    }, [campus, subject, courseNumber, currentYear])
 
-    useEffect(() => {
-        grabGrades().then(r => {
-        })
-            .catch(e => {
-                setGradesData(null);
-            })
-    }, [currentYear])
+    // useEffect(() => {
+    //     grabGrades().then(r => {
+    //     })
+    //         .catch(e => {
+    //             setGradesData(null);
+    //         })
+    // }, [currentYear])
 
     useEffect(() => {
         setLoading(false)

@@ -7,7 +7,6 @@ import './styles.css';
 import CourseTab from "../Courses/CourseTab";
 import Navbar from "./Navbar";
 import Calendar from "../Calendar/Calendar";
-import axios from "axios";
 import LoadingScreen from "../Utils/LoadingScreen";
 import LZString from 'lz-string';
 import {useDispatch, useSelector} from "react-redux";
@@ -87,7 +86,7 @@ const Home = () => {
             }).catch((e) => {
                 console.log(e.message)
             });
-    }, [])
+    }, [dispatch, hasData])
 
     // will be called when we got the courses and sections info
     // stored in the state
@@ -101,7 +100,7 @@ const Home = () => {
             dispatch(setPermEvents(temp));
             setHasData(true);
         }
-    }, [UBCOCourses, UBCOSectionsInfo, UBCVCourses, UBCVSectionsInfo, savedEvents])
+    }, [UBCOCourses, UBCOSectionsInfo, UBCVCourses, UBCVSectionsInfo, savedEvents, dispatch])
 
     // update events in local storage
     useEffect(() => {
@@ -112,7 +111,7 @@ const Home = () => {
                 localStorage.setItem("events", LZString.compress(JSON.stringify([])));
             }
         }
-    }, [permEvents])
+    }, [permEvents, dispatch, hasData])
 
     return (
         !hasData
