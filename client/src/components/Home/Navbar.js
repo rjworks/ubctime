@@ -58,8 +58,11 @@ const Narbarr = () => {
                             <NavDropdown.Item
                                 key={i}
                                 onClick={() => {
-                                    localStorage.setItem("campus", LZString.compress(JSON.stringify(el)));
-                                    dispatch(setCampus(el));
+                                    if(campus !== el){
+                                        localStorage.setItem("campus", LZString.compress(JSON.stringify(el)));
+                                        dispatch(setCampus(el));
+                                        window.location.reload();
+                                    }
                                 }}>
                                 {el}
                             </NavDropdown.Item>
@@ -71,8 +74,11 @@ const Narbarr = () => {
                             <NavDropdown.Item
                                 key={i}
                                 onClick={() => {
-                                    localStorage.setItem("session", LZString.compress(JSON.stringify(el)));
-                                    dispatch(setSession(el));
+                                    if(session !== el){
+                                        localStorage.setItem("session", LZString.compress(JSON.stringify(el)));
+                                        dispatch(setSession(el));
+                                        window.location.reload();
+                                    }
                                 }}>
                                 {el}
                             </NavDropdown.Item>

@@ -244,7 +244,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                     <div id="top-course-list" ref={inputFocusRef}/>
                     {
                         showSections ? filteredData !== null && filteredData['MATH'] !== undefined ? viewingSectionInfo === null ?
-                            <div>Loading....</div> : Object.values(filteredData[currentCourse[0]]).map((el, i) => {
+                            <div>Loading....</div> : Object.values(filteredData[currentCourse[0]]).slice(0, 100).map((el, i) => {
                                 if(!scrolledToTop){
                                     scrollToTop();
                                     setScrolledToTop(true);
@@ -333,7 +333,7 @@ function CourseTab({UBCOCourses, UBCVCourses, UBCOSectionsInfo, UBCVSectionsInfo
                                     // scrollToTop();
                                     return <div key={i} className="course-group">
                                         {filteredData[el].length !== 0 && (el)}
-                                        {filteredData[el].length !== 0 ? filteredData[el].map((g, j) => {
+                                        {filteredData[el].length !== 0 ? filteredData[el].slice(0, 100).map((g, j) => {
                                             return <div
                                                 onClick={() => {
                                                     setCurrentCourse([el, g.course]);
