@@ -1,6 +1,6 @@
 import React from 'react';
 import 'material-icons/iconfont/material-icons.css';
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {DropdownButton, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {setCampus} from "../../actions/campus";
 import {setSession} from "../../actions/session";
@@ -16,7 +16,7 @@ const Narbarr = () => {
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 text-center">
                 <div>
                     <div
                         className="ubc-time flex items-center py-2 px-9 text-gray-700 hover:text-gray-900">
@@ -53,34 +53,43 @@ const Narbarr = () => {
                         </svg>
                     </div>
                 </div>
-            </div>
-            <Nav>
-                <NavDropdown title={campus} id="basic-nav-dropdown">
-                    {campuses.map((el, i) =>
-                        <NavDropdown.Item
-                            key={i}
-                            onClick={() => {
-                                localStorage.setItem("campus", LZString.compress(JSON.stringify(el)));
-                                dispatch(setCampus(el));
-                            }}>
-                            {el}
-                        </NavDropdown.Item>
-                    )}
-                </NavDropdown>
+                    {/*<DropdownButton variant="primary" menuAlign="right" className="year-dropdown"*/}
+                    {/*                title={currentYear}>*/}
+                    {/*    {years.map((el, i) =>*/}
+                    {/*        <NavDropdown.Item*/}
+                    {/*            key={i}*/}
+                    {/*            onClick={() => setCurrentYear(el)}>*/}
+                    {/*            /!*{el === currentCampus ? null : el}*!/*/}
+                    {/*            {el}*/}
+                    {/*        </NavDropdown.Item>*/}
+                    {/*    )}*/}
+                    {/*</DropdownButton>*/}
+                    <DropdownButton menuAlign="right" title={campus} variant="none" id="campus-btn">
+                        {campuses.map((el, i) =>
+                            <NavDropdown.Item
+                                key={i}
+                                onClick={() => {
+                                    localStorage.setItem("campus", LZString.compress(JSON.stringify(el)));
+                                    dispatch(setCampus(el));
+                                }}>
+                                {el}
+                            </NavDropdown.Item>
+                        )}
+                    </DropdownButton>
 
-                <NavDropdown title={session} id="basic-nav-dropdown">
-                    {sessions.map((el, i) =>
-                        <NavDropdown.Item
-                            key={i}
-                            onClick={() => {
-                                localStorage.setItem("session", LZString.compress(JSON.stringify(el)));
-                                dispatch(setSession(el));
-                            }}>
-                            {el}
-                        </NavDropdown.Item>
-                    )}
-                </NavDropdown>
-            </Nav>
+                    <DropdownButton menuAlign="right" title={session} variant="none" id="session-btn">
+                        {sessions.map((el, i) =>
+                            <NavDropdown.Item
+                                key={i}
+                                onClick={() => {
+                                    localStorage.setItem("session", LZString.compress(JSON.stringify(el)));
+                                    dispatch(setSession(el));
+                                }}>
+                                {el}
+                            </NavDropdown.Item>
+                        )}
+                    </DropdownButton>
+                </div>
         </Navbar>
     );
 };

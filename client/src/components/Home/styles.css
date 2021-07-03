@@ -35,7 +35,20 @@
     display: flex;
     background-image: linear-gradient(to right, #1D4ED8, #3B82F6);
 }
-
+.navbar-dropdowns{
+    display: flex;
+    color: white;
+}
+.navbar-dropdowns:hover{
+    color: red;
+    text-decoration: none;
+}
+#campus-btn, #session-btn{
+    color: white;
+}
+#campus-btn:focus,  #session-btn:focus{
+    box-shadow: none;
+}
 .ubc-time:hover{
     cursor: default;
 }

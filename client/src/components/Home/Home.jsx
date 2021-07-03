@@ -124,9 +124,9 @@ const Home = () => {
                 <div className="nice-border">
                     <Split
                         className="split"
-                        sizes={[75, 25]}
-                        minSize={[350, 350]}
-                        expandToMin={true}
+                        sizes={[80, 20]}
+                        minSize={[500, 220]}
+                        expandToMin={false}
                         gutterSize={5}
                         gutterAlign="center"
                         dragInterval={1}
