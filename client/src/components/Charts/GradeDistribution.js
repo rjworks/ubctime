@@ -60,7 +60,19 @@ const renderActiveShape = (props) => {
 const years = ["2020W", "2020S", "2019W", "2019S", "2018W", "2018S", "2017W", "2017S", "2016W", "2016S", "2015W", "2015S", "2014W", "2014S",];
 const GradeDistribution = (props) => {
     const {campus, subject, courseNumber} = props.courseInfo;
-    const [gradesData, setGradesData] = useState(null);
+    const [gradesData, setGradesData] = useState([
+        {name: '<50%', value: 1},
+        {name: '50-54%', value: 1},
+        {name: '55-59%', value: 1},
+        {name: '60-63%', value: 1},
+        {name: '64-67%', value: 1},
+        {name: '68-71%', value: 1},
+        {name: '72-75%', value: 1},
+        {name: '76-79%', value:1},
+        {name: '80-84%', value: 1},
+        {name: '85-89%', value: 1},
+        {name: '90-100%', value: 1}
+    ]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentYear, setCurrentYear] = useState(years[0])
     const [loading, setLoading] = useState(true);
@@ -164,7 +176,7 @@ const GradeDistribution = (props) => {
                 {gradesData === null ? <div
                         style={{color: "white", fontSize: "2rem", padding: "2rem"}}
                         className="grade-distribution-container grade-distribution">No grade history data found for this
-                        course/session</div> :
+                        course/session<br/><br/><br/></div> :
                     <div className="grades-history-chart">
                         <PieChart width={350} height={270}>
                             <defs>
