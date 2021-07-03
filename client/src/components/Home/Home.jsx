@@ -14,6 +14,7 @@ import {setPermEvents} from "../../actions/permEvents";
 import {setCampus} from "../../actions/campus";
 import {setSession} from "../../actions/session";
 import axiosInstance from "../../client";
+
 const Home = () => {
     const [UBCOCourses, setUBCOCourses] = useState(null);
     const [UBCOSectionsInfo, setUBCOSectionsInfo] = useState(null);
@@ -49,17 +50,9 @@ const Home = () => {
                     setUBCOCourses(res.data);
                     localStorage.setItem("UBCOCourses", LZString.compress(JSON.stringify(res.data)));
 
-                    res = await axiosInstance.get(`/ubco/sections-info`)
-                    setUBCOSectionsInfo(res.data);
-                    localStorage.setItem("UBCOSectionsInfo", LZString.compress(JSON.stringify(res.data)));
-
                     res = await axiosInstance.get(`/ubcv/courses`)
                     setUBCVCourses(res.data);
                     localStorage.setItem("UBCVCourses", LZString.compress(JSON.stringify(res.data)));
-
-                    res = await axiosInstance.get(`/ubcv/sections-info`)
-                    setUBCVSectionsInfo(res.data);
-                    localStorage.setItem("UBCVSectionsInfo", LZString.compress(JSON.stringify(res.data)));
 
                     setSavedEvents([]);
                     localStorage.setItem("events", LZString.compress(JSON.stringify([])));
@@ -88,10 +81,19 @@ const Home = () => {
             });
     }, [dispatch, hasData])
 
-    // will be called when we got the courses and sections info
-    // stored in the state
+    // after getting the courses, let's now get the sections info!
     useEffect(() => {
-        if(UBCOCourses !== null && UBCOSectionsInfo !== null && UBCVCourses !== null && UBCVSectionsInfo !== null && savedEvents !== null){
+        const getSectionsInfo = async() => {
+            let res = await axiosInstance.get(`/ubco/sections-info`)
+            setUBCOSectionsInfo(res.data);
+            localStorage.setItem("UBCOSectionsInfo", LZString.compress(JSON.stringify(res.data)));
+
+            res = await axiosInstance.get(`/ubcv/sections-info`)
+            setUBCVSectionsInfo(res.data);
+            localStorage.setItem("UBCVSectionsInfo", LZString.compress(JSON.stringify(res.data)));
+        }
+        if(UBCOCourses !== null && UBCVCourses !== null){
+            getSectionsInfo().then(r => console.log("Got sections info")).catch(e => console.log("Didn't get sections info"))
             const temp = Object.assign([], savedEvents);
             temp.forEach(el => {
                 el.start = new Date(el.start);
@@ -100,7 +102,7 @@ const Home = () => {
             dispatch(setPermEvents(temp));
             setHasData(true);
         }
-    }, [UBCOCourses, UBCOSectionsInfo, UBCVCourses, UBCVSectionsInfo, savedEvents, dispatch])
+    }, [UBCOCourses, UBCVCourses])
 
     // update events in local storage
     useEffect(() => {

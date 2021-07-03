@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require("fs");
 const csv = require("csv-parse");
+const path = require("path");
 const router = express.Router();
 const {Subject, Course, Section, SectionInfo} = require('../models/schema')
 //routes for:
@@ -133,6 +134,30 @@ router.get('/:campus/:data/:subject?/:courseNumber?/:section?', async(req, res) 
     }
     res.status(200).send(data);
 });
+
+router.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../apiUsage.html'));
+    // res.send([
+    //     {
+    //         "GET SUBJECTS": '/:campus/subjects/:subject?',
+    //         "GET ALL SUBJECTS EXAMPLE": '/ubcv/subjects/',
+    //         "GET ALL SUBJECTS WITH SUBJECT FILTER": '/ubco/subjects/cosc'
+    //     },
+    //     {
+    //         "GET COURSES": '/:campus/courses/:subject?/:courseNumber?',
+    //         "GET ALL COURSES EXAMPLE": '/ubcv/courses',
+    //         "GET ALL COURSES WITH SUBJECT FILTER": '/ubcv/courses/cpsc',
+    //         "GET ALL COURSES WITH SUBJECT AND COURSE NUMBER FILTER": '/ubco/courses/cosc/121',
+    //     },
+    //     {
+    //         "GET SECTIONS INFO": '/:campus/courses/:subject?/:courseNumber?/:section?',
+    //         "GET ALL SECTIONS INFO EXAMPLE": '/ubcv/sections-info/',
+    //         "GET ALL SECTIONS INFO WITH SUBJECT FILTER": '/ubcv/sections-info/cpsc',
+    //         "GET ALL SECTIONS INFO WITH SUBJECT AND COURSE NUMBER FILTER": '/ubco/sections-info/cosc/121',
+    //         "GET ALL SECTIONS INFO WITH SUBJECT, COURSE NUMBER, and SECTION FILTER": '/ubco/sections-info/cosc/121/101',
+    //     }
+    // ])
+})
 //create one
 // router.post('/:campus/:data/', async(req, res) => {
 //     let data;
