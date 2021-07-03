@@ -52,7 +52,7 @@
 
 #campus-btn:hover, #session-btn:hover {
     transition: all .5s ease-in-out;
-    transform: scale(1);
+    transform: scale(1.1);
 }
 
 .ubc-time:hover {
