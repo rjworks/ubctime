@@ -1,6 +1,6 @@
 import React from 'react';
 import 'material-icons/iconfont/material-icons.css';
-import {DropdownButton, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {DropdownButton, Navbar, NavDropdown} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {setCampus} from "../../actions/campus";
 import {setSession} from "../../actions/session";
@@ -53,17 +53,6 @@ const Narbarr = () => {
                         </svg>
                     </div>
                 </div>
-                    {/*<DropdownButton variant="primary" menuAlign="right" className="year-dropdown"*/}
-                    {/*                title={currentYear}>*/}
-                    {/*    {years.map((el, i) =>*/}
-                    {/*        <NavDropdown.Item*/}
-                    {/*            key={i}*/}
-                    {/*            onClick={() => setCurrentYear(el)}>*/}
-                    {/*            /!*{el === currentCampus ? null : el}*!/*/}
-                    {/*            {el}*/}
-                    {/*        </NavDropdown.Item>*/}
-                    {/*    )}*/}
-                    {/*</DropdownButton>*/}
                     <DropdownButton menuAlign="right" title={campus} variant="none" id="campus-btn">
                         {campuses.map((el, i) =>
                             <NavDropdown.Item
