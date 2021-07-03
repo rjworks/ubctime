@@ -102,7 +102,7 @@ const Home = () => {
             dispatch(setPermEvents(temp));
             setHasData(true);
         }
-    }, [UBCOCourses, UBCVCourses])
+    }, [UBCOCourses, UBCVCourses, dispatch, savedEvents])
 
     // update events in local storage
     useEffect(() => {
